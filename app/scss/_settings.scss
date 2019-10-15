@@ -1,0 +1,8 @@
+$navBgCol: #125e81;
+$colorBg: #e4e4e4;
+
+@mixin nav {
+    width: 100vw;
+    height: remCreated(200) + rem;
+    background-color: $navBgCol;
+}

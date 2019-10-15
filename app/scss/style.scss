@@ -1,0 +1,23 @@
+@import 'settings';
+
+body {
+    background-color: $colorBg;
+
+    .indexNav {
+        @include nav;
+        height: 5rem;
+        text-align: center;
+
+        .option {
+            width: 25%;
+            height: 100%;
+            font-size: 2rem;
+            display: inline-block;
+            color: goldenrod;
+        }
+    }
+
+    .intro {
+        text-align: center;
+    }
+}
