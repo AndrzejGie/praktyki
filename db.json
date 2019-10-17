@@ -1,8 +1,9 @@
 {
-  "albums": [{
+  "album": [{
     "id": 1,
     "title": "Pan Tadeusz",
     "author": "Adam Mickiewicz",
+    "genre": "Progressive gore drama",
     "description": "Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it?"
   }]
 }

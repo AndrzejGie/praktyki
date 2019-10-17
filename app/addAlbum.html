@@ -19,12 +19,15 @@
 
     </nav>
 
-    <input type="text" id="addTitle" onkeyup="titleLenght(id)">
+    <span class="col-lg-1">Tytuł:</span><input type="text" id="addTitle" onkeyup="titleLenght(id)">
     <div>Ilość znaków: <span id="titleSpan"></span> / 50</div>
-    <input type="text" id="addAuthor" onkeyup="titleLenght(id)">
+    <span class="col-lg-1">Wykonawca:</span><input type="text" id="addAuthor" onkeyup="titleLenght(id)">
     <div>Ilość znaków: <span id="authorSpan"></span> / 50</div>
-    <input type="text" id="addDescription" onkeyup="titleLenght(id)">
-    <div>Ilość znaków: <span id="descriptionSpan"></span> / 150</div>
+    <span class="col-lg-1">Gatunek:</span><input type="text" id="addGenre" onkeyup="titleLenght(id)">
+    <div>Ilość znaków: <span id="genreSpan"></span> / 50</div>
+    <span class="col-lg-1">Opis:</span><textarea rows="5" cols="18" id="addDescription"
+        onkeyup="titleLenght(id)"></textarea>
+    <div>Ilość znaków: <span id="descriptionSpan"></span> / 270</div>
     <button id="addBtn" onclick="get()">Dodaj</button>
 
 

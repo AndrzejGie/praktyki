@@ -3,26 +3,28 @@ function get() {
     // document.getElementById('addAuthor').innerHTML = ''
     // document.getElementById('addDescription').innerHTML = ''
 
-    let book = {
+    let album = {
         title: document.getElementById("addTitle").value,
         author: document.getElementById("addAuthor").value,
+        genre: document.getElementById("addGenre").value,
         description: document.getElementById("addDescription").value
     };
 
     fetch("http://localhost:3000/albums", {
             method: "POST",
-            body: JSON.stringify(book),
+            body: JSON.stringify(album),
             headers: {
                 "Content-Type": "application/json"
             },
             credentials: "same-origin"
         })
         .then(res => {
-            alert("dodałeś książkę");
+            alert("dodałeś album");
             book = {
                 title: "",
                 author: "",
-                description: ""
+                genre: "",
+                description: "",
             };
         })
         .catch(err => {
@@ -37,6 +39,9 @@ function titleLenght(sth) {
     } else if (sth == "addAuthor") {
         let titleLen = document.getElementById("addAuthor").value.split("").length;
         document.getElementById('authorSpan').innerHTML = titleLen;
+    } else if (sth == "addGenre") {
+        let titleLen = document.getElementById("addGenre").value.split("").length;
+        document.getElementById('genreSpan').innerHTML = titleLen;
 
     } else if (sth == "addDescription") {
         let titleLen = document.getElementById("addDescription").value.split("").length;
