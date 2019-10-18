@@ -3,23 +3,25 @@ function showMe() {
     fetch("http://localhost:3000/albums")
         .then(res => res.json())
         .then(res => {
-            createCard = [];
-            Object.keys(res).map(
-                id => {
-                    newCard = {};
-                    newCard.key = id
-                    newCard.title = res[id].title;
-                    newCard.author = res[id].author;
-                    newCard.genre = res[id].genre;
-                    newCard.description = res[id].description;
+            console.log("TCL: showMe -> res", res)
+            //createCard = [];
+            // Object.keys(res).map(
+            //     id => {
+            //         newCard = {};
+            //         newCard.key = id
+            //         newCard.title = res[id].title;
+            //         newCard.author = res[id].author;
+            //         newCard.genre = res[id].genre;
+            //         newCard.description = res[id].description;
 
-                    createCard.push(newCard);
-                    return createCard;
-                }
-            )
+            //         createCard.push(newCard);
+            //         console.log("TCL: showMe -> createCard", createCard)
+            //         return createCard;
+            //     }
+            // )
 
 
-            createCard.forEach(element => {
+            res.forEach(res => {
 
 
 
@@ -37,16 +39,16 @@ function showMe() {
                 //---Create inner elements
                 let cardTitle = document.createElement('h3')
                 cardTitle.classList.add('card-title')
-                cardTitle.innerHTML = element.title
+                cardTitle.innerHTML = res.title
                 let cardAuthor = document.createElement('h4')
                 cardAuthor.classList.add('card-subtitle', 'mb-2')
-                cardAuthor.innerHTML = element.author
+                cardAuthor.innerHTML = res.author
                 let cardGenre = document.createElement('h5')
                 cardGenre.classList.add('card-subtitle', 'mb-2', 'text-muted')
-                cardGenre.innerHTML = element.genre
+                cardGenre.innerHTML = res.genre
                 let cardDescr = document.createElement('p')
                 cardDescr.classList.add('card-text')
-                cardDescr.innerHTML = element.description
+                cardDescr.innerHTML = res.description
                 let deleteAlbum = document.createElement('a')
                 deleteAlbum.classList.add('card-link')
                 deleteAlbum.setAttribute('href', '#')
@@ -66,6 +68,7 @@ function showMe() {
 
                 mainCard.appendChild(cardBody)
                 albumCard.appendChild(mainCard)
+
             });
         })
 
