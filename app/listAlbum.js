@@ -29,32 +29,32 @@ function showMe() {
 
                 //---Create main div 
                 let mainCard = document.createElement('div')
-                mainCard.classList.add('card')
-                mainCard.setAttribute('style', 'width: 20rem')
+                mainCard.classList.add('card', 'col-6', 'albumCard')
+                mainCard.setAttribute('id', 'album' + res.id)
 
                 //---Create card body
                 let cardBody = document.createElement('div')
                 cardBody.classList.add('card-body')
 
                 //---Create inner elements
-                let cardTitle = document.createElement('h3')
+                let cardTitle = document.createElement('h4')
                 cardTitle.classList.add('card-title')
                 cardTitle.innerHTML = res.title
-                let cardAuthor = document.createElement('h4')
+                let cardAuthor = document.createElement('h5')
                 cardAuthor.classList.add('card-subtitle', 'mb-2')
                 cardAuthor.innerHTML = res.author
-                let cardGenre = document.createElement('h5')
+                let cardGenre = document.createElement('h6')
                 cardGenre.classList.add('card-subtitle', 'mb-2', 'text-muted')
                 cardGenre.innerHTML = res.genre
                 let cardDescr = document.createElement('p')
                 cardDescr.classList.add('card-text')
                 cardDescr.innerHTML = res.description
                 let deleteAlbum = document.createElement('a')
-                deleteAlbum.classList.add('card-link')
+                deleteAlbum.classList.add('card-link', 'delElem')
                 deleteAlbum.setAttribute('href', '#')
                 deleteAlbum.innerHTML = "Usuń"
                 let editAlbum = document.createElement('a')
-                editAlbum.classList.add('card-link')
+                editAlbum.classList.add('card-link', 'editElem')
                 editAlbum.setAttribute('href', '#')
                 editAlbum.innerHTML = "Edytuj"
 
@@ -71,8 +71,16 @@ function showMe() {
 
             });
         })
-
-
-
 }
 showMe();
+
+function deleteAlbum() {
+    fetch("http://localhost:3000/albums")
+        .then(album => album.json())
+        .then(album => {
+            console.log("TCL: deleteAlbum -> album", album)
+
+            let erase = document.getElementById('album' + res.id)
+
+        })
+}

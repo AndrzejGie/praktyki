@@ -1,0 +1,13 @@
+@import 'settings';
+
+body {
+    @include body;
+
+    .indexNav {
+        @include nav;
+
+        .option {
+            @include navOptions;
+        }
+    }
+}

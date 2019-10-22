@@ -1,8 +1,22 @@
 $navBgCol: #125e81;
 $colorBg: #e4e4e4;
 
+@mixin body {
+    background-color: $colorBg;
+}
+
 @mixin nav {
     width: 100vw;
-    height: remCreated(200) + rem;
+    height: 5rem;
+    text-align: center;
     background-color: $navBgCol;
+}
+
+@mixin navOptions {
+    width: 25%;
+    height: 100%;
+    font-size: 2rem;
+    margin-top: inherit;
+    display: inline-block;
+    color: goldenrod;
 }

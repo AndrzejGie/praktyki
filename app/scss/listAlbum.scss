@@ -1,1 +1,38 @@
 @import 'settings';
+
+body {
+    @include body;
+
+    .indexNav {
+        @include nav;
+
+        .option {
+            @include navOptions;
+        }
+    }
+
+    #app {
+        //position: relative;
+        text-align: center;
+
+        .albumCard {
+            //position: absolute;
+            display: inline-block;
+            overflow-wrap: break-word;
+            margin: 10px 20px;
+            border: 1px solid black;
+            height: auto;
+            width: 45%;
+
+            .delElem {
+                float: left;
+                margin-left: 15%;
+            }
+
+            .editElem {
+                float: right;
+                margin-right: 15%;
+            }
+        }
+    }
+}
