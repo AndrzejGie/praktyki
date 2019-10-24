@@ -3,7 +3,7 @@ function showMe() {
     fetch("http://localhost:3000/albums")
         .then(res => res.json())
         .then(res => {
-            console.log("TCL: showMe -> res", res)
+            // console.log("TCL: showMe -> res", res)
             //createCard = [];
             // Object.keys(res).map(
             //     id => {
@@ -49,11 +49,12 @@ function showMe() {
                 let cardDescr = document.createElement('p')
                 cardDescr.classList.add('card-text')
                 cardDescr.innerHTML = res.description
-                let deleteAlbum = document.createElement('a')
+                let deleteAlbum = document.createElement('button')
                 deleteAlbum.classList.add('card-link', 'delElem')
-                deleteAlbum.setAttribute('href', '#')
+                deleteAlbum.setAttribute('id', 'del' + res.id)
+                deleteAlbum.setAttribute('onclick', 'deleteAlbum()')
                 deleteAlbum.innerHTML = "Usuń"
-                let editAlbum = document.createElement('a')
+                let editAlbum = document.createElement('button')
                 editAlbum.classList.add('card-link', 'editElem')
                 editAlbum.setAttribute('href', '#')
                 editAlbum.innerHTML = "Edytuj"
@@ -78,9 +79,29 @@ function deleteAlbum() {
     fetch("http://localhost:3000/albums")
         .then(album => album.json())
         .then(album => {
-            console.log("TCL: deleteAlbum -> album", album)
+                console.log("TCL: deleteAlbum -> album", album)
 
-            let erase = document.getElementById('album' + res.id)
+                var delItem = albumToDel
 
-        })
+                albumToDel = {
+                    "album": [{
+
+                        "title": "ffwwf",
+                        "author": "eaasfas",
+                        "genre": "qwfffa",
+                        "description": "dfaafdf",
+                        "id": 5
+                    }]
+                }
+                console.log("TCL: deleteAlbum -> albumToDel", albumToDel)
+                delete delItem;
+                alert('album usunięty')
+            },
+
+
+
+
+        )
+
+
 }
